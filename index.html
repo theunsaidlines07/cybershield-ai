@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+window.onerror=function(msg,src,line,col,err){window.parent.postMessage({type:'app-error',message:msg,source:src,lineno:line,colno:col,stack:err&&err.stack||''},'*');};
+window.onunhandledrejection=function(e){window.parent.postMessage({type:'app-error',message:'Unhandled promise rejection: '+(e.reason&&e.reason.message||e.reason||'unknown'),stack:e.reason&&e.reason.stack||''},'*');};
+window.addEventListener('error',function(e){var t=e&&e.target;if(t&&t!==window&&t.tagName==='SCRIPT'){var u=t.src||'';window.parent.postMessage({type:'app-error',message:'Failed to load script'+(u?': '+u:' (inline module)'),source:u},'*');}},true);
+(function(){var _f=window.fetch;window.fetch=function(){var a=arguments,u=typeof a[0]==='string'?a[0]:(a[0]&&a[0].url)||'';var p=_f.apply(this,a);p.then(function(r){if(r.status===500){r.clone().text().then(function(b){window.parent.postMessage({type:'fetch-error',url:u,status:500,body:b},'*');}).catch(function(){window.parent.postMessage({type:'fetch-error',url:u,status:500,body:''},'*');});}}).catch(function(e){window.parent.postMessage({type:'fetch-error',url:u,status:0,body:e.message||'fetch failed'},'*');});return p;};})();
+</script>
+<script src="https://builder.puter.com/runtime.js" defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>CYBERSHIELD AI — Scam Detection & Prevention</title>
+<meta name="description" content="Think Before You Click. An educational tool to recognise online scam warning signs and respond safely.">
+<meta name="theme-color" content="#070d1a">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+      colors: {
+        ink: { 950: '#050a14', 900: '#070d1a', 850: '#0b1324', 800: '#0f1a2f', 700: '#16233d', 600: '#1f2f4f', 500: '#334566' },
+        cy: { 300: '#67e8f9', 400: '#22d3ee', 500: '#06b6d4' }
+      }
+    }
+  }
+};
+</script>
+<script src="https://js.puter.com/v2/"></script>
+<link rel="stylesheet" href="styles.css">
+    <!-- puter-pwa: generated, do not edit -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon-180.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="CYBERSHIELD">
+    <!-- /puter-pwa -->
+</head>
+<body class="bg-ink-900 text-slate-200 font-sans antialiased">
+<div class="grid-bg" aria-hidden="true"></div>
+
+<!-- ============ HEADER ============ -->
+<header class="sticky top-0 z-40 border-b border-ink-700/80 bg-ink-900/85 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center gap-4">
+    <button data-nav="home" class="flex items-center gap-2.5 shrink-0" aria-label="CyberShield AI home">
+      <span class="logo-mark">
+        <svg viewBox="0 0 64 64" class="w-6 h-6"><path d="M32 8 L52 15 V30 C52 43 43 52 32 57 C21 52 12 43 12 30 V15 Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M23 32 L29.5 38.5 L42 26" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="leading-tight text-left">
+        <span class="block font-extrabold tracking-[0.12em] text-white text-[15px]">CYBERSHIELD <span class="text-cy-400">AI</span></span>
+        <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500">Scam Detection &amp; Prevention</span>
+      </span>
+    </button>
+    <nav class="hidden md:flex items-center gap-1 ml-auto" aria-label="Main">
+      <button class="nav-link" data-nav="home"><i data-lucide="layout-dashboard"></i>Dashboard</button>
+      <button class="nav-link" data-nav="checker"><i data-lucide="scan-search"></i>Scam Checker</button>
+      <button class="nav-link" data-nav="learn"><i data-lucide="book-open"></i>Learn &amp; Prevent</button>
+      <button class="nav-link" data-nav="quiz"><i data-lucide="target"></i>Challenge</button>
+      <button class="nav-link nav-link-help" data-nav="help"><i data-lucide="life-buoy"></i>Emergency Help</button>
+    </nav>
+    <button data-nav="privacy" class="ml-auto md:ml-2 icon-btn" aria-label="Privacy notice" title="Privacy notice"><i data-lucide="lock"></i></button>
+  </div>
+</header>
+
+<main class="relative max-w-7xl mx-auto px-4 sm:px-6 pb-28 md:pb-16">
+
+  <!-- ============ HOME ============ -->
+  <section id="view-home" class="view">
+    <div class="pt-8 sm:pt-14 grid lg:grid-cols-[1.05fr_1fr] gap-8 lg:gap-12 items-start">
+      <div>
+        <div class="chip mb-5"><span class="pulse-dot"></span>Educational exhibition prototype</div>
+        <h1 class="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-white tracking-tight leading-[1.05]">Think Before<br>You <span class="text-cy-400">Click.</span></h1>
+        <p class="mt-5 text-lg sm:text-xl text-slate-400 max-w-xl">Recognize warning signs. Verify before you trust. Stay safer online.</p>
+        <div class="mt-8 grid grid-cols-3 gap-3 max-w-lg">
+          <div class="stat"><i data-lucide="radar"></i><b>9+</b><span>warning-sign checks</span></div>
+          <div class="stat"><i data-lucide="graduation-cap"></i><b>9</b><span>scam lessons</span></div>
+          <div class="stat"><i data-lucide="target"></i><b>10</b><span>challenge rounds</span></div>
+        </div>
+      </div>
+
+      <div class="panel panel-glow p-5 sm:p-6">
+        <div class="flex items-center justify-between mb-3">
+          <label for="home-input" class="flex items-center gap-2 font-semibold text-white"><i data-lucide="scan-search" class="w-5 h-5 text-cy-400"></i>Quick message check</label>
+          <span class="engine-badge" data-engine-badge></span>
+        </div>
+        <textarea id="home-input" rows="6" class="field" placeholder="Paste a suspicious SMS, email, WhatsApp message, job offer, or delivery notice here…"></textarea>
+        <div class="mt-4 flex flex-wrap gap-2.5">
+          <button id="home-check" class="btn-primary flex-1 sm:flex-none"><i data-lucide="search-check"></i>Check for Scam Signs</button>
+          <button id="home-demo" class="btn-ghost"><i data-lucide="flask-conical"></i>Try Demo Example</button>
+        </div>
+        <p id="home-error" class="hidden mt-3 text-sm text-amber-300 flex items-center gap-2"><i data-lucide="circle-alert" class="w-4 h-4"></i>Please paste or type a message first.</p>
+        <p class="mt-4 text-xs text-slate-500 flex gap-2"><i data-lucide="eye-off" class="w-4 h-4 shrink-0"></i>Don't paste real passwords, OTPs, PINs or bank details. Messages are not saved.</p>
+      </div>
+    </div>
+
+    <h2 class="section-label mt-14">Explore</h2>
+    <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4">
+      <button class="nav-card" data-nav="checker">
+        <span class="nav-card-icon text-cy-400"><i data-lucide="scan-search"></i></span>
+        <span class="nav-card-title">Scam Checker</span>
+        <span class="nav-card-text">Paste a message and see which warning signs it contains.</span>
+        <span class="nav-card-go">Open <i data-lucide="arrow-right"></i></span>
+      </button>
+      <button class="nav-card" data-nav="learn">
+        <span class="nav-card-icon text-blue-400"><i data-lucide="book-open"></i></span>
+        <span class="nav-card-title">Learn &amp; Prevent</span>
+        <span class="nav-card-text">Understand 9 common scam types and how to stay protected.</span>
+        <span class="nav-card-go">Open <i data-lucide="arrow-right"></i></span>
+      </button>
+      <button class="nav-card" data-nav="quiz">
+        <span class="nav-card-icon text-emerald-400"><i data-lucide="target"></i></span>
+        <span class="nav-card-title">Scam Challenge</span>
+        <span class="nav-card-text">Can you spot the scam? Test yourself with 10 fictional messages.</span>
+        <span class="nav-card-go">Start <i data-lucide="arrow-right"></i></span>
+      </button>
+      <button class="nav-card nav-card-help" data-nav="help">
+        <span class="nav-card-icon text-amber-400"><i data-lucide="life-buoy"></i></span>
+        <span class="nav-card-title">Emergency Help</span>
+        <span class="nav-card-text">Think you've been scammed? Follow these steps right away.</span>
+        <span class="nav-card-go">Open <i data-lucide="arrow-right"></i></span>
+      </button>
+    </div>
+
+    <div class="notice mt-8">
+      <i data-lucide="info"></i>
+      <div><b class="text-slate-200">Educational guidance only.</b> CyberShield highlights common warning signs to help you think carefully. It cannot guarantee that a message is safe or fraudulent, cannot verify senders, and does not check website reputations. When in doubt, verify through an official contact.</div>
+    </div>
+  </section>
+
+  <!-- ============ CHECKER ============ -->
+  <section id="view-checker" class="view hidden">
+    <div class="page-head">
+      <div>
+        <div class="crumb"><i data-lucide="scan-search"></i>Scam Checker</div>
+        <h1 class="page-title">Check a message for scam signs</h1>
+        <p class="page-sub">Paste an SMS, email, social media message, payment request, job offer, or delivery notification.</p>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] gap-6 items-start">
+      <div class="space-y-5">
+        <div class="panel p-5">
+          <div class="flex items-center justify-between mb-2">
+            <label for="checker-input" class="text-sm font-semibold text-slate-300">Message to analyse</label>
+            <span id="char-count" class="text-xs font-mono text-slate-500">0 / 4000</span>
+          </div>
+          <textarea id="checker-input" rows="8" maxlength="4000" class="field" placeholder="Paste the message here…"></textarea>
+          <p id="checker-error" class="hidden mt-2 text-sm text-amber-300 flex items-center gap-2"><i data-lucide="circle-alert" class="w-4 h-4"></i>Please paste or type a message to analyse.</p>
+
+          <div class="mt-4">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Analysis engine</div>
+            <div class="seg" role="radiogroup" aria-label="Analysis engine">
+              <button class="seg-btn" data-engine="rules" role="radio"><i data-lucide="list-checks"></i><span><b>Rule-based</b><small>Offline · on this device</small></span></button>
+              <button class="seg-btn" data-engine="ai" role="radio"><i data-lucide="sparkles"></i><span><b>AI analysis</b><small>Online · needs sign-in</small></span></button>
+            </div>
+            <div id="ai-panel" class="hidden mt-3 rounded-xl border border-blue-500/25 bg-blue-500/5 p-3.5 text-sm text-slate-300">
+              <div class="flex gap-2.5">
+                <i data-lucide="cloud" class="w-4 h-4 text-blue-300 shrink-0 mt-0.5"></i>
+                <div class="space-y-2">
+                  <p>AI mode sends the message text to an AI language model through <b>Puter</b> (a free cloud service). It is not stored by this app. Sign-in with a free Puter account is required.</p>
+                  <div id="ai-auth" class="flex flex-wrap items-center gap-2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5 flex flex-wrap gap-2.5">
+            <button id="checker-run" class="btn-primary flex-1 sm:flex-none"><i data-lucide="search-check"></i>Check for Scam Signs</button>
+            <button id="checker-demo" class="btn-ghost"><i data-lucide="flask-conical"></i>Try Demo Example</button>
+            <button id="checker-clear" class="btn-ghost"><i data-lucide="eraser"></i>Clear</button>
+          </div>
+        </div>
+
+        <div class="panel p-5">
+          <div class="flex items-center gap-2 mb-3 text-sm font-semibold text-slate-300"><i data-lucide="file-text" class="w-4 h-4 text-cy-400"></i>Fictional sample messages</div>
+          <div id="samples" class="grid sm:grid-cols-2 gap-2"></div>
+        </div>
+      </div>
+
+      <div id="result-area" aria-live="polite">
+        <div class="panel p-8 text-center empty-state">
+          <div class="scan-ring mx-auto"><i data-lucide="shield"></i></div>
+          <h3 class="mt-5 text-lg font-semibold text-white">Ready to analyse</h3>
+          <p class="mt-1.5 text-sm text-slate-400 max-w-sm mx-auto">Paste a message or pick a sample. Results will show the risk level, warning signs and safe next steps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LEARN ============ -->
+  <section id="view-learn" class="view hidden">
+    <div class="page-head">
+      <div>
+        <div class="crumb"><i data-lucide="book-open"></i>Learn &amp; Prevent</div>
+        <h1 class="page-title">Know the tricks. Stay a step ahead.</h1>
+        <p class="page-sub">Tap a card to see an example, warning signs and how to protect yourself.</p>
+      </div>
+    </div>
+
+    <div class="panel panel-glow p-5 sm:p-6 mb-6">
+      <div class="flex items-center gap-2 mb-4">
+        <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i>
+        <h2 class="text-lg font-bold text-white">Remember these rules</h2>
+      </div>
+      <div id="rules" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+    </div>
+
+    <div id="lessons" class="grid md:grid-cols-2 xl:grid-cols-3 gap-4 items-start"></div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section id="view-quiz" class="view hidden">
+    <div class="page-head">
+      <div>
+        <div class="crumb"><i data-lucide="target"></i>Scam Challenge</div>
+        <h1 class="page-title">Can you spot the scam?</h1>
+        <p class="page-sub">All messages are fictional. Read carefully and choose the best answer.</p>
+      </div>
+    </div>
+    <div id="quiz-root" class="max-w-3xl mx-auto"></div>
+  </section>
+
+  <!-- ============ HELP ============ -->
+  <section id="view-help" class="view hidden">
+    <div class="page-head">
+      <div>
+        <div class="crumb text-amber-300"><i data-lucide="life-buoy"></i>Emergency Help</div>
+        <h1 class="page-title">Think you've been scammed?</h1>
+        <p class="page-sub">Stay calm and act quickly. Acting fast can improve the chances of limiting losses.</p>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-[1.3fr_1fr] gap-6 items-start">
+      <div class="panel p-5 sm:p-6">
+        <div class="flex items-center gap-2 mb-1">
+          <i data-lucide="list-ordered" class="w-5 h-5 text-cy-400"></i>
+          <h2 class="text-lg font-bold text-white">What to do now</h2>
+        </div>
+        <p class="text-xs text-slate-500 mb-5">CyberShield's general safety advice</p>
+        <ol id="help-steps" class="space-y-3"></ol>
+      </div>
+
+      <div class="space-y-5">
+        <div class="panel official p-5 sm:p-6">
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <div class="flex items-center gap-2"><i data-lucide="badge-check" class="w-5 h-5 text-emerald-400"></i><h2 class="text-lg font-bold text-white">Official resources — India</h2></div>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-300 border border-emerald-400/30 rounded-md px-2 py-1">Government</span>
+          </div>
+          <div class="space-y-3">
+            <a href="tel:1930" class="official-row">
+              <span class="official-icon"><i data-lucide="phone"></i></span>
+              <span class="flex-1 min-w-0">
+                <span class="block text-xs text-slate-400">National Cybercrime Helpline</span>
+                <span class="block text-3xl font-extrabold text-white tracking-wider font-mono">1930</span>
+                <span class="block text-xs text-slate-400 mt-0.5">Call to report financial cyber fraud.</span>
+              </span>
+            </a>
+            <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer" class="official-row">
+              <span class="official-icon"><i data-lucide="globe"></i></span>
+              <span class="flex-1 min-w-0">
+                <span class="block text-xs text-slate-400">National Cyber Crime Reporting Portal</span>
+                <span class="block text-base font-semibold text-cy-300 break-all">https://cybercrime.gov.in/</span>
+                <span class="block text-xs text-slate-400 mt-0.5">File a cybercrime complaint online.</span>
+              </span>
+              <i data-lucide="external-link" class="w-4 h-4 text-slate-500"></i>
+            </a>
+          </div>
+          <p class="mt-4 text-xs text-slate-500">These are official Government of India channels. CyberShield is not connected to them and <b class="text-slate-400">cannot file a report for you</b> — you must contact them yourself.</p>
+        </div>
+
+        <div class="panel p-5">
+          <div class="flex items-center gap-2 mb-3"><i data-lucide="folder-lock" class="w-5 h-5 text-blue-400"></i><h3 class="font-bold text-white">Evidence checklist</h3></div>
+          <p class="text-xs text-slate-500 mb-3">Tick items as you collect them (not saved — for your reference only).</p>
+          <div id="evidence" class="space-y-2"></div>
+        </div>
+
+        <div class="notice">
+          <i data-lucide="globe"></i>
+          <div>Outside India? Contact your bank and your country's official police or cybercrime reporting service, found on official government websites.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRIVACY ============ -->
+  <section id="view-privacy" class="view hidden">
+    <div class="page-head">
+      <div>
+        <div class="crumb"><i data-lucide="lock"></i>Privacy &amp; Safety</div>
+        <h1 class="page-title">Privacy notice</h1>
+        <p class="page-sub">What CyberShield processes, and what it doesn't.</p>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 max-w-5xl">
+      <div class="panel p-5"><div class="priv-h"><i data-lucide="list-checks" class="text-emerald-400"></i>Rule-based checker (default)</div><p class="priv-p">Runs entirely in your browser. The text you paste is checked against built-in patterns on your own device and is <b>not sent anywhere</b>.</p></div>
+      <div class="panel p-5"><div class="priv-h"><i data-lucide="sparkles" class="text-blue-400"></i>AI analysis (optional)</div><p class="priv-p">Only if you choose AI mode and sign in, the message text is sent to an AI language model via <b>Puter</b>, a third-party cloud service, to generate the analysis. Puter's own privacy terms apply. Avoid pasting real personal details.</p></div>
+      <div class="panel p-5"><div class="priv-h"><i data-lucide="database-zap" class="text-cy-400"></i>No storage</div><p class="priv-p">CyberShield does not save submitted messages, results, quiz answers or evidence checklists. Everything clears when you close or reload the page.</p></div>
+      <div class="panel p-5"><div class="priv-h"><i data-lucide="user-x" class="text-amber-400"></i>No personal data requested</div><p class="priv-p">The app never asks for your name, phone number, passwords, OTPs, PINs or bank details. Please don't enter them.</p></div>
+      <div class="panel p-5"><div class="priv-h"><i data-lucide="link-2-off" class="text-cy-400"></i>Links are never opened</div><p class="priv-p">Links inside analysed messages are shown as plain text only. The app inspects the visible text for warning signs but never visits, downloads or verifies them.</p></div>
+      <div class="panel p-5"><div class="priv-h"><i data-lucide="flask-conical" class="text-emerald-400"></i>Fictional examples</div><p class="priv-p">All sample messages and quiz scenarios are made up for education. Names, numbers, and web addresses are fictional and non-functional.</p></div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ MOBILE NAV ============ -->
+<nav class="md:hidden fixed bottom-0 inset-x-0 z-40 border-t border-ink-700 bg-ink-900/95 backdrop-blur-md pb-[env(safe-area-inset-bottom)]" aria-label="Mobile">
+  <div class="grid grid-cols-5">
+    <button class="tab" data-nav="home"><i data-lucide="layout-dashboard"></i><span>Home</span></button>
+    <button class="tab" data-nav="checker"><i data-lucide="scan-search"></i><span>Checker</span></button>
+    <button class="tab" data-nav="learn"><i data-lucide="book-open"></i><span>Learn</span></button>
+    <button class="tab" data-nav="quiz"><i data-lucide="target"></i><span>Quiz</span></button>
+    <button class="tab tab-help" data-nav="help"><i data-lucide="life-buoy"></i><span>Help</span></button>
+  </div>
+</nav>
+
+<footer class="hidden md:block border-t border-ink-700/70 py-6 text-center text-xs text-slate-500">
+  CYBERSHIELD AI · Class 11 Science Exhibition Project · Educational guidance only — not a guarantee of safety or fraud detection ·
+  <button data-nav="privacy" class="underline hover:text-cy-300">Privacy</button>
+</footer>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
